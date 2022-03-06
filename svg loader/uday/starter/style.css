@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.first {
+  height: 250px;
+  width: 1440 px;
+  margin-left: 100;
+  background-color: rgb(18, 129, 150);
+}
+h1 {
+  color: rgb(224, 192, 22);
+  font-family: Palanquin Dark;
+  font-style: normal;
+  font-size: 144px;
+  line-height: 250px;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  color: brown;
+}
