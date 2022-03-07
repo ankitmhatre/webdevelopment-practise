@@ -1,4 +1,4 @@
-* {
+html, body {
   margin: 0;
   padding: 0;
   border: 0;
@@ -14,7 +14,7 @@
   margin-left: 100;
   background-color: rgb(18, 129, 150);
 }
-span {
+.main_title {
   color: rgb(224, 192, 22);
   font-family: Palanquin Dark;
   font-style: normal;
@@ -29,8 +29,10 @@ span {
   top: 0px;
 }
 
-logo {
-  background-color: red;
-  -webkit-mask: url(logo.svg) no-repeat center;
-  mask: url(logo.svg) no-repeat center;
+.logo {
+  height: 500px;
+  width: 500px;
+  background: url('../palm-tree.svg') no-repeat center; 
+  /* -webkit-mask: url('../palm-tree.svg') no-repeat center;
+  mask: url('logo.svg') no-repeat center; */
 }
