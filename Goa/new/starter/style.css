@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   border: 0;
@@ -10,7 +11,7 @@ html, body {
 
 .goatext {
   height: 250px;
-  width: 1440 px;
+  width: 1440px;
   margin-left: 100;
   background-color: rgb(18, 129, 150);
 }
@@ -21,18 +22,17 @@ html, body {
   font-size: 144px;
   line-height: 250px;
   letter-spacing: 0.02em;
-}
-
-.movetree {
-  color: green;
-  position: relative;
-  top: 0px;
+  width: 481px;
 }
 
 .logo {
-  height: 100%;
-  width: 10%;
-  background: url('../palm-tree.svg') no-repeat center; 
+  height: 250px;
+  width: 244px;
+  position: relative;
+  top: -250px;
+  left: 244px;
+
+  background: url("../../palm-tree.svg") no-repeat center;
   /* -webkit-mask: url('../palm-tree.svg') no-repeat center;
   mask: url('logo.svg') no-repeat center; */
 }
