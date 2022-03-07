@@ -30,8 +30,8 @@ html, body {
 }
 
 .logo {
-  height: 500px;
-  width: 500px;
+  height: 100%;
+  width: 10%;
   background: url('../palm-tree.svg') no-repeat center; 
   /* -webkit-mask: url('../palm-tree.svg') no-repeat center;
   mask: url('logo.svg') no-repeat center; */
