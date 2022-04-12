@@ -4,6 +4,8 @@
 }
 .navbar {
   display: flex;
+  position: absolute;
+  width: 100%;
 }
 .logo {
   width: 20%;
@@ -13,7 +15,6 @@
 }
 
 .logo img {
-  width: 70%;
   height: 70px;
   border-radius: 50px;
   border: 3px solid white;
@@ -56,24 +57,39 @@
 }
 
 .background {
-  background: rgba(0, 0, 0, 0.7) url("../images/IMG20191230165324.jpg");
+  background: rgba(0, 0, 0, 0.7);
+  background-image: url("../wada/images/IMG20191230165324.jpg");
   background-size: cover;
   background-blend-mode: darken;
-  background-repeat: no-repeat;
 }
 
 .box-main {
-  display: flex;
+  padding-top: 15vh;
   align-items: center;
   justify-content: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
+  flex-direction: row;
 }
 
-.paraheading {
-  font-size: 20px;
+.firstHalf {
+  width: 50%;
+  display: flex;
+  flex: 0.5;
+  flex-direction: column;
 }
-
+.secondHalf {
+  align-items: right;
+  flex: 0.5;
+}
 .firstSection {
   height: 100vh;
+}
+
+.secondHalf img {
+  width: 40px;
+  height: 40px;
+  border: 3px solid white;
+  border-radius: 50px;
+  display: flex;
 }
