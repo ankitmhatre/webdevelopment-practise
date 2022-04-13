@@ -38,7 +38,8 @@
 .nav-list li a {
   list-style: none;
   text-decoration: none;
-  color: black;
+  color: white;
+  cursor: pointer;
 }
 
 .nav-list li a:hover {
@@ -49,17 +50,19 @@
   text-align: right;
   width: 50%;
   background-color: none;
+  padding: 0px 40px;
+  padding-top: 25px;
 }
 
 #search {
-  padding-top: 5px;
+  padding-top: 3px 8px;
   font-size: 20px;
   border-radius: 10px;
 }
 
 .background {
   background: rgba(0, 0, 0, 0.7);
-  background-image: url("../wada/images/IMG20191230165324.jpg");
+  background-image: url("../wada/images/coal.jpg");
   background-size: cover;
   background-blend-mode: darken;
 }
@@ -96,6 +99,7 @@
   border: 3px solid white;
   border-radius: 50px;
   display: flex;
+  filter: (100%);
 }
 
 .paraheading {
@@ -107,3 +111,23 @@
   padding-left: 10px;
   padding-top: 10px;
 }
+
+.buttons {
+  padding-left: 10px;
+}
+.btn {
+  margin: 7px 0px;
+  border: 3px solid white;
+  border-radius: 10px;
+  font-size: 14px;
+  border-width: 2px;
+  padding: 3px 8px;
+}
+
+/* .btn1 {
+  margin: 7px 0px;
+  border: 3px solid white;
+  border-radius: 15px;
+  font-size: 14px;
+  padding: 3px 8px;
+} */
