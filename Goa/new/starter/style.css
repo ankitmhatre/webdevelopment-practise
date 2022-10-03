@@ -9,7 +9,7 @@ body {
 
 .navbar {
   display: flex;
-  background-color: #cad2c5;
+  background-color: #e9edc9;
   position: sticky;
 }
 
@@ -84,14 +84,14 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding-top: 10px;
 }
 
 .box1 {
   width: 220px;
   height: 350px;
-  background-color: #caf0f8;
+  background-color: #e9edc9;
   border: 2px solid black;
   border-radius: 60px;
 }
@@ -103,7 +103,7 @@ body {
 .box2 {
   width: 220px;
   height: 350px;
-  background-color: #caf0f8;
+  background-color: #e9edc9;
   border: 2px solid black;
   border-radius: 60px;
 }
@@ -111,7 +111,7 @@ body {
 .box3 {
   width: 220px;
   height: 350px;
-  background-color: #caf0f8;
+  background-color: #e9edc9;
   border: 2px solid black;
   border-radius: 60px;
 }
@@ -119,14 +119,14 @@ body {
 .box4 {
   width: 220px;
   height: 350px;
-  background-color: #caf0f8;
+  background-color: #e9edc9;
   border: 2px solid black;
   border-radius: 60px;
 }
 .box5 {
   width: 220px;
   height: 350px;
-  background-color: #caf0f8;
+  background-color: #e9edc9;
   border: 2px solid black;
   border-radius: 60px;
 }
@@ -134,7 +134,7 @@ body {
 .img1 {
   display: flex;
   justify-content: center;
-  width: 180px;
+  width: 120px;
   height: 110px;
   border-radius: 50%;
   align-items: center;
@@ -149,16 +149,21 @@ body {
 }
 
 .container1 {
-  background-color: #62b6cb;
+  /* background-color: #62b6cb; */
   height: 100vh;
+  background-image: url("./images/Screenshot\ \(112\).png");
 }
 
 .section1 {
-  height: 120px;
+  height: 100px;
   display: flex;
   font-size: 30px;
   justify-content: center;
   align-items: center;
   color: antiquewhite;
   /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
+}
+
+.sec1-heading {
+  font-weight: 100;
 }
