@@ -5,12 +5,14 @@
 
 body {
   font-family: "Quicksand", sans-serif;
+  height: 100vh;
 }
 
 .navbar {
   display: flex;
   background-color: #e9edc9;
   position: sticky;
+  top: 0;
 }
 
 /* .main-title {
@@ -26,7 +28,7 @@ body {
   /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
   align-items: center;
   justify-content: center;
-  padding: 25px 25px;
+  padding: 20px 25px;
 }
 
 .nav-list {
@@ -79,7 +81,7 @@ body {
 
 .section2 {
   width: 100%;
-  height: 300px;
+  height: 400px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -90,45 +92,56 @@ body {
 
 .box1 {
   width: 220px;
-  height: 350px;
+  height: 400px;
   background-color: #e9edc9;
   border: 2px solid black;
-  border-radius: 60px;
+  border-radius: 30px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 .box1-text-content {
   text-align: center;
   padding-top: 5px;
+  height: 240px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.h2-inbox {
+  padding: 5px;
 }
 
 .box2 {
   width: 220px;
-  height: 350px;
+  height: 400px;
   background-color: #e9edc9;
   border: 2px solid black;
-  border-radius: 60px;
+  border-radius: 30px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
 .box3 {
   width: 220px;
-  height: 350px;
+  height: 400px;
   background-color: #e9edc9;
   border: 2px solid black;
-  border-radius: 60px;
+  border-radius: 30px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
 .box4 {
   width: 220px;
-  height: 350px;
+  height: 400px;
   background-color: #e9edc9;
   border: 2px solid black;
-  border-radius: 60px;
+  border-radius: 30px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 .box5 {
   width: 220px;
-  height: 350px;
+  height: 400px;
   background-color: #e9edc9;
   border: 2px solid black;
-  border-radius: 60px;
+  border-radius: 30px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
 
 .img1 {
@@ -150,20 +163,63 @@ body {
 
 .container1 {
   /* background-color: #62b6cb; */
+  background-color: rgb(37, 116, 109);
+  /* background-image: url("./images/Screenshot\ \(112\).png"); */
   height: 100vh;
-  background-image: url("./images/Screenshot\ \(112\).png");
 }
 
 .section1 {
-  height: 100px;
+  height: 60px;
   display: flex;
   font-size: 30px;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   color: antiquewhite;
   /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
+  padding-top: 25px;
+  padding-left: 25px;
 }
 
 .sec1-heading {
   font-weight: 100;
+}
+
+.readmore {
+  justify-content: center;
+  display: flex;
+}
+.readmore a {
+  text-decoration: none;
+  color: grey;
+}
+
+.section3 {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.beaches-in-goa {
+  display: flex;
+  flex-direction: row;
+}
+
+.heading h3 {
+  display: flex;
+  justify-content: flex-start;
+  padding: 25px;
+  align-items: center;
+}
+
+.imgclass {
+  width: 60%;
+  height: 200px;
+  padding: 25px;
+}
+.para1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  padding: 25px;
 }
