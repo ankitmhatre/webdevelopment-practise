@@ -13,7 +13,7 @@ body {
   display: flex;
   background-color: #22577a;
   position: sticky;
-  top: 0;
+  /* top: 0; */
 }
 
 /* .main-title {
@@ -29,7 +29,7 @@ body {
   /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
   align-items: center;
   justify-content: center;
-  padding: 20px 25px;
+  padding: 10px 25px;
 }
 
 .nav-list {
@@ -42,7 +42,7 @@ body {
   align-items: center;
   justify-content: center;
   list-style: none;
-  padding: 25px 26px;
+  padding: 10px 25px;
   /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
 }
 .nav-list li a {
@@ -54,7 +54,8 @@ body {
 .logo {
   justify-content: center;
   align-items: center;
-  padding-top: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: #a7c957;
 }
 .logo img {

@@ -134,3 +134,15 @@
   font-size: 14px;
   padding: 3px 8px;
 } */
+
+.secondSection {
+  background-image: url(../wada/images/IMG20191230174248.jpg);
+}
+
+.background2 {
+  height: 100vh;
+  /* display: flex; */
+  background-size: 100% 100%;
+  background-blend-mode: darken;
+  background-position: ;
+}
