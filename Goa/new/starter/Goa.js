@@ -1,10 +1,15 @@
-const signUpButton = document.getElementById("signUp");
-const signInButton = document.getElementById("signIn");
-const container = document.getElementById("container");
+"use strict";
 
-signUpButton.addEventListener("click", () => {
-  container.classList.add("right-panel-active");
-});
-signInButton.addEventListener("click", () => {
-  container.classList.remove("right-panel-active");
-});
+var heading = "Explore Goa at Ease";
+
+let i = 0;
+
+window.onload = function () {
+  var write = setInterval(function () {
+    document.getElementById("sec1heading").textContent += heading[i];
+    i++;
+    if (i > heading.length - 1) {
+      clearInterval(write);
+    }
+  }, 23);
+};
