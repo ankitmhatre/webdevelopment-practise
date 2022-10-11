@@ -140,7 +140,7 @@ body {
   /* background-color: #62b6cb; */
   background-color: rgb(37, 116, 109);
   /* background-image: url("./images/Screenshot\ \(112\).png"); */
-  height: 85vh;
+  height: 90vh;
 }
 
 .section1 {
@@ -186,6 +186,7 @@ body {
 .beaches-in-goa {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 .heading h3 {
@@ -196,14 +197,11 @@ body {
   font-size: 25px;
 }
 
-.imgclass {
-  /* width: 50%; */
-  height: 170px;
+/* .imgclass {
+  width: 160%;
+  height: 180px;
   /* padding: 25px; */
-  border: 3px solid white;
-  border-radius: 30px;
-  margin-left: 200px;
-}
+/*  */
 
 /* .imgdiv {
   width: 40%;
@@ -217,9 +215,54 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 40%;
   padding: 25px;
   /* border: 2px solid black; */
   /* border-radius: 30px; */
   margin-left: 25px;
+}
+
+.img-expand {
+  display: flex;
+  flex-direction: column;
+  background-size: 80vh;
+  width: 60%;
+}
+
+.panel {
+  /* background-size: auto 100%; */
+  background-repeat: no-repeat;
+  background-position: 27% 60%;
+  width: 35vh;
+  /* height: 35vh; */
+  /* flex-shrink: 0.5; */
+  flex: 20px;
+  width: 90%;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+  font-size: 20px;
+  position: absolute;
+  /* padding-top: 50px; */
+  margin: 0;
+  opacity: 0;
+  top: 15px;
+  left: 15px;
+  color: rgb(39, 38, 38);
+}
+
+.panel.active {
+  opacity: 1;
+  flex: 200px;
+  /* flex-wrap: wrap; */
+  flex-shrink: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
 }
