@@ -1,0 +1,25 @@
+{
+  "name": "nodeproject",
+  "version": "1.0.0",
+  "description": "Normal test project",
+  "main": "uday.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ankit": "nodemon uday.js"
+  },
+  "keywords": [
+    "test",
+    "ankit",
+    "uday",
+    "education",
+    "tech",
+    "vr"
+  ],
+  "author": "Ankit, Uday",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^4.10.0",
+    "nodemon": "^2.0.20"
+  }
+}
