@@ -9,10 +9,9 @@ console.log("this is amazing");
 // initialize the variables
 let songs = [
   {
-    songName: "BeeteinLamhe",
-    filePath: "1.mp3",
-    coverPath:
-      "D:AcademicJavascriptjs practicewebdevelopment-practiseMusic playerCover Images",
+    songName: "Beetein Lamhe",
+    filePath: "./assets/music/1.mp3",
+    coverPath: "./assets/cover/1.jpg",
   },
   //   {
   //     songName: "BeeteinLamhe",
@@ -65,7 +64,15 @@ let songs = [
   //   },
 ];
 
-let audioElement = new Audio("1.mp3");
+
+
+songs.forEach(k=>{
+  console.log(k)
+})
+
+
+let audioElement = new Audio(songs[0].filePath);
+
 
 console.log(audioElement);
 let songIndex = 0; //no song play initially
