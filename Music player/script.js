@@ -83,11 +83,13 @@ masterPlay.addEventListener("click", function () {
     audioElement.play();
     masterPlay.classList.remove("play");
     masterPlay.classList.add("pause");
+    masterPlay.src="./Icons/Pause.svg";
     gif.style.opacity = 1;
   } else {
     audioElement.pause();
     masterPlay.classList.remove("pause");
     masterPlay.classList.add("play");
+    masterPlay.src="./Icons/Play.svg";
     gif.style.opacity = 0;
   }
 });
