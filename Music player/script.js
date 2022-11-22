@@ -99,13 +99,13 @@ masterPlay.addEventListener("click", function () {
 
 //seekbar
 
-audioElement.addEventListener("timeupdate", function () {
-  let progress = parseInt(
-    (audioElement.currentTime / audioElement.duration) * 100
-  );
-});
+// audioElement.addEventListener("timeupdate", function () {
+//   let progress = parseInt(
+//     (audioElement.currentTime / audioElement.duration) * 100
+//   );
+// });
 
-myProgressBar.addEventListener("change", () => {
-  audioElement.currentTime =
-    (myProgressBar.value * audioElement.duration) / 100;
-});
+// myProgressBar.addEventListener("change", () => {
+//   audioElement.currentTime =
+//     (myProgressBar.value * audioElement.duration) / 100;
+// });
