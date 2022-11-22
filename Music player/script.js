@@ -2,23 +2,13 @@ var currentPlayingSongIndex = 0;
 var repeatState = 0;
 var progress = 0;
 
-<<<<<<< HEAD
-songs.forEach((k) => {
-  console.log(k);
-});
-
-let audioElement = new Audio(songs[0].filePath);
-
-console.log(audioElement);
-let songIndex = 0; //no song play initially
-=======
->>>>>>> 6cbda6f90cc19679c5c0870e582d17f10a97ef8f
 let masterPlay = document.getElementById("masterPlay");
 let myProgressBar = document.getElementById("myProgressBar");
 let pause = document.getElementById("pausebtn");
 let gif = document.getElementById("gif");
 let repeatElement = document.getElementById("repeat");
 let songTitle = document.getElementById("songTitle");
+let albumArt = document.getElementById("albumArt");
 
 // {
 //0 = repeatAll,
@@ -28,14 +18,14 @@ let songTitle = document.getElementById("songTitle");
 
 let songs = [
   {
-    songName: "Beetein Lamhe 1 ",
+    songName: "Beete Lamhein",
     filePath: "./assets/music/1.mp3",
-    coverPath: "./assets/cover/1.jpg",
+    coverPath: "./assets/cover/1.jpeg",
   },
   {
-    songName: "BeeteinLamhe 2",
-    filePath: "./assets/music/1.mp3",
-    coverPath: "./assets/cover/1.jpg",
+    songName: "Labon Ko",
+    filePath: "./assets/music/2.mp3",
+    coverPath: "./assets/cover/2.jpeg",
   },
 ];
 
@@ -126,7 +116,7 @@ myProgressBar.addEventListener("input", function () {
 function togglePlayBackState() {
   //Listening progress bar values on seeking song progress
   songTitle.innerText = songs[currentPlayingSongIndex].songName;
-  
+  albumArt.src = songs[currentPlayingSongIndex].coverPath
 
   audioElement.addEventListener("timeupdate", () => {
     var totalSong = audioElement.duration;
@@ -153,20 +143,6 @@ function togglePlayBackState() {
   }
 }
 
-<<<<<<< HEAD
-//seekbar
-
-// audioElement.addEventListener("timeupdate", function () {
-//   let progress = parseInt(
-//     (audioElement.currentTime / audioElement.duration) * 100
-//   );
-// });
-
-// myProgressBar.addEventListener("change", () => {
-//   audioElement.currentTime =
-//     (myProgressBar.value * audioElement.duration) / 100;
-// });
-=======
 //change the repeat state icon based on the repeat State variable
 function checkRepeatState() {
   switch (repeatState) {
@@ -184,4 +160,3 @@ function checkRepeatState() {
       repeatElement.src = "./Icons/repeat.svg";
   }
 }
->>>>>>> 6cbda6f90cc19679c5c0870e582d17f10a97ef8f
