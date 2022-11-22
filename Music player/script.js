@@ -64,15 +64,11 @@ let songs = [
   //   },
 ];
 
-
-
-songs.forEach(k=>{
-  console.log(k)
-})
-
+songs.forEach((k) => {
+  console.log(k);
+});
 
 let audioElement = new Audio(songs[0].filePath);
-
 
 console.log(audioElement);
 let songIndex = 0; //no song play initially
@@ -90,16 +86,26 @@ masterPlay.addEventListener("click", function () {
     audioElement.play();
     masterPlay.classList.remove("play");
     masterPlay.classList.add("pause");
-    masterPlay.src="./Icons/Pause.svg";
+    masterPlay.src = "./Icons/Pause.svg";
     gif.style.opacity = 1;
   } else {
     audioElement.pause();
     masterPlay.classList.remove("pause");
     masterPlay.classList.add("play");
-    masterPlay.src="./Icons/Play.svg";
+    masterPlay.src = "./Icons/Play.svg";
     gif.style.opacity = 0;
   }
 });
 
-console.log(masterPlay);
-console.log(masterPlay.classList.add("pause"));
+//seekbar
+
+audioElement.addEventListener("timeupdate", function () {
+  let progress = parseInt(
+    (audioElement.currentTime / audioElement.duration) * 100
+  );
+});
+
+myProgressBar.addEventListener("change", () => {
+  audioElement.currentTime =
+    (myProgressBar.value * audioElement.duration) / 100;
+});
