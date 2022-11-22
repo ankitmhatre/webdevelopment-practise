@@ -1,22 +1,13 @@
-console.log("this is amazing");
-// function run() {
-//   var URL =
-//     "D:AcademicJavascriptjs practicewebdevelopment-practiseMusic playerSongs\1.mp3";
-//   window.open(URL, null);
-// }
-// run();
-// console.log(run);
-// initialize the variables
-
 var currentPlayingSongIndex = 0;
 var repeatState = 0;
+var progress = 0;
 
-let songIndex = 0; //no song play initially
 let masterPlay = document.getElementById("masterPlay");
 let myProgressBar = document.getElementById("myProgressBar");
 let pause = document.getElementById("pausebtn");
 let gif = document.getElementById("gif");
 let repeatElement = document.getElementById("repeat");
+let songTitle = document.getElementById("songTitle");
 
 // {
 //0 = repeatAll,
@@ -39,19 +30,103 @@ let songs = [
 
 checkRepeatState(0);
 
-songs.forEach((k) => {
-  console.log(k);
+// songs.forEach((k) => {
+//   console.log(k);
+// });
+
+let audioElement = new Audio(
+  songs[currentPlayingSongIndex].filePath
+)
+
+
+//On load calculation
+// audioElement.onloadedmetadata = function() {
+//   //alert(audioElement.duration);
+// };
+audioElement.addEventListener("ended", () => {
+  console.log("ended");
+  masterPlay.src = "./Icons/Play.svg";
+  playNewSong();
 });
 
-let audioElement = new Audio(songs[currentPlayingSongIndex].filePath);
 
-console.log(audioElement);
+function playNewSong() {
 
-//Listen to events
-myProgressBar.addEventListener("timeupdate", function () {});
+
+
+
+  console.log("Play new song");
+
+  switch (repeatState) {
+    case 0:
+      currentPlayingSongIndex++;
+      audioElement = new Audio(songs[currentPlayingSongIndex].filePath);
+      togglePlayBackState();
+      break;
+    case 1:
+      togglePlayBackState();
+
+      break;
+    case 2:
+      break;
+  }
+
+  // progress = 0;
+  // myProgressBar.value = 0;
+  console.log("here we will handle changing songs");
+  
+}
+
+
+
+//Listening progress bar values on seeking song progress
+myProgressBar.addEventListener("input", function () {
+  var newTime = (myProgressBar.value * audioElement.duration) / 1000;
+  audioElement.currentTime = newTime;
+});
+
+audioElement.addEventListener("timeupdate", () => {
+  var totalSong = audioElement.duration;
+  var currentTime = audioElement.currentTime;
+  var seekToTime = (currentTime * 1000) / totalSong;
+  myProgressBar.value = seekToTime;
+});
 
 //play pause click
 masterPlay.addEventListener("click", function () {
+  togglePlayBackState();
+});
+
+repeatElement.addEventListener("click", () => {
+  if (repeatState == 1) {
+    repeatState = 0;
+  } else {
+    repeatState++;
+  }
+
+  checkRepeatState();
+});
+
+myProgressBar.addEventListener("input", function () {
+  var newTime = (myProgressBar.value * audioElement.duration) / 1000;
+  audioElement.currentTime = newTime;
+});
+
+function togglePlayBackState() {
+  //Listening progress bar values on seeking song progress
+  songTitle.innerText = songs[currentPlayingSongIndex].songName;
+  
+
+  audioElement.addEventListener("timeupdate", () => {
+    var totalSong = audioElement.duration;
+    var currentTime = audioElement.currentTime;
+    console.log(currentTime)
+    var seekToTime = (currentTime * 1000) / totalSong;
+    myProgressBar.value = seekToTime;
+  });
+
+
+
   if (audioElement.paused || audioElement.currentTime <= 0) {
     audioElement.play();
     masterPlay.classList.remove("play");
@@ -65,24 +140,10 @@ masterPlay.addEventListener("click", function () {
     masterPlay.src = "./Icons/Play.svg";
     gif.style.opacity = 0;
   }
-});
+}
 
-
-
-repeatElement.addEventListener("click", ()=>{
-  if(repeatState==1){
-    repeatState=0;
-  }else{
-    repeatState++;
-  }
-
- checkRepeatState()
-})
-
-
+//change the repeat state icon based on the repeat State variable
 function checkRepeatState() {
-  
-
   switch (repeatState) {
     case 0:
       repeatElement.src = "./Icons/repeat.svg";
@@ -94,8 +155,7 @@ function checkRepeatState() {
 
       break;
 
-      default:
-        repeatElement.src = "./Icons/repeat.svg";
-
+    default:
+      repeatElement.src = "./Icons/repeat.svg";
   }
 }
