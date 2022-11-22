@@ -10,11 +10,16 @@ let repeatElement = document.getElementById("repeat");
 let songTitle = document.getElementById("songTitle");
 let albumArt = document.getElementById("albumArt");
 
+
+//REPEAT STATES
 // {
 //0 = repeatAll,
 // 1 = repeatOne,
 // 2 = repeatNone -not using
 //}
+
+
+
 
 let songs = [
   {
@@ -31,6 +36,8 @@ let songs = [
 
 checkRepeatState(0);
 
+
+
 // songs.forEach((k) => {
 //   console.log(k);
 // });
@@ -44,29 +51,28 @@ let audioElement = new Audio(
 // audioElement.onloadedmetadata = function() {
 //   //alert(audioElement.duration);
 // };
-audioElement.addEventListener("ended", () => {
-  console.log("ended");
-  masterPlay.src = "./Icons/Play.svg";
-  playNewSong();
-});
+
 
 
 function playNewSong() {
-
-
-
-
   console.log("Play new song");
 
   switch (repeatState) {
     case 0:
-      currentPlayingSongIndex++;
+      console.log(songs.length)
+      console.log(currentPlayingSongIndex)
+      if(currentPlayingSongIndex==(songs.length-1)){
+        currentPlayingSongIndex=0;
+      }else{
+        currentPlayingSongIndex++;
+      }
+
       audioElement = new Audio(songs[currentPlayingSongIndex].filePath);
+      
       togglePlayBackState();
       break;
     case 1:
       togglePlayBackState();
-
       break;
     case 2:
       break;
@@ -81,17 +87,7 @@ function playNewSong() {
 
 
 //Listening progress bar values on seeking song progress
-myProgressBar.addEventListener("input", function () {
-  var newTime = (myProgressBar.value * audioElement.duration) / 1000;
-  audioElement.currentTime = newTime;
-});
-
-audioElement.addEventListener("timeupdate", () => {
-  var totalSong = audioElement.duration;
-  var currentTime = audioElement.currentTime;
-  var seekToTime = (currentTime * 1000) / totalSong;
-  myProgressBar.value = seekToTime;
-});
+-
 
 //play pause click
 masterPlay.addEventListener("click", function () {
@@ -99,34 +95,47 @@ masterPlay.addEventListener("click", function () {
 });
 
 repeatElement.addEventListener("click", () => {
-  if (repeatState == 1) {
+  if (repeatState == 2) {
     repeatState = 0;
   } else {
     repeatState++;
   }
-
   checkRepeatState();
 });
 
+
 myProgressBar.addEventListener("input", function () {
+  
   var newTime = (myProgressBar.value * audioElement.duration) / 1000;
   audioElement.currentTime = newTime;
 });
 
+
+//Change playing to pause if already playing 
+//change pause to playing if already paused
+//change song title and album art
+
 function togglePlayBackState() {
-  //Listening progress bar values on seeking song progress
+  
+  //change song title and album art
   songTitle.innerText = songs[currentPlayingSongIndex].songName;
   albumArt.src = songs[currentPlayingSongIndex].coverPath
+  audioElement.addEventListener("ended", () => {
+    console.log("ended");
+    masterPlay.src = "./Icons/Play.svg";
+    playNewSong();
+  });
+  
 
+
+  //Listening progress bar values on seeking song progress
   audioElement.addEventListener("timeupdate", () => {
     var totalSong = audioElement.duration;
     var currentTime = audioElement.currentTime;
-    console.log(currentTime)
+    //console.log(currentTime)
     var seekToTime = (currentTime * 1000) / totalSong;
     myProgressBar.value = seekToTime;
   });
-
-
 
   if (audioElement.paused || audioElement.currentTime <= 0) {
     audioElement.play();
@@ -148,15 +157,14 @@ function checkRepeatState() {
   switch (repeatState) {
     case 0:
       repeatElement.src = "./Icons/repeat.svg";
-
       break;
-
     case 1:
       repeatElement.src = "./Icons/repeat-once.png";
-
       break;
-
+      case 2:
+        repeatElement.src = "./Icons/repeat-off.svg";
+        break;
     default:
-      repeatElement.src = "./Icons/repeat.svg";
+      repeatElement.src = "./Icons/repeat-off.svg";
   }
 }
