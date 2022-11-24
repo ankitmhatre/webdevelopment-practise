@@ -128,20 +128,32 @@ h1 {
 .coverImage {
   height: 30px;
   width: 30px;
-  /* padding-left: 20px; */
+  margin-left: 10px;
   border-radius: 35px;
-  /* margin: 0px 23px; */
+}
+
+.songName {
+  width: 70%;
+  margin-left: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .songListPlay {
-  display: flex;
-  /* justify-content: ; */
-  align-items: center;
+  position: relative;
 }
-
-.playButton {
-  padding-left: 10px;
+.timeStamp {
+  padding-right: 40px;
+}
+.songListPlayBtn {
+  /* padding-right: 10px; */
   cursor: pointer;
+  right: 15px;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
 }
 
 .gif {
