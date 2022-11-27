@@ -11,10 +11,9 @@ let songTitle = document.getElementById("songTitle");
 let albumArt = document.getElementById("albumArt");
 
 let songItem = Array.from(document.getElementsByClassName("songItem"));
-let songListPlayBtn = Array.from(
-  document.getElementsByClassName("songListPlayBtn")
-);
+let songListPlayBtn = document.getElementsByClassName("songListPlayBtn");
 let masterPlay2 = document.getElementById("masterPlaySongListPLayBtn");
+let previous = document.getElementsByClassName("previous");
 
 // let timeStamp = Array.from(document.getElementsByClassName("timeStamp"));
 
@@ -141,7 +140,7 @@ function togglePlayBackState() {
   songTitle.innerText = songs[currentPlayingSongIndex].songName;
   albumArt.src = songs[currentPlayingSongIndex].coverPath;
   audioElement.addEventListener("ended", () => {
-    console.log("ended");
+    // console.log("ended");
     masterPlay.src = "./Icons/Play.svg";
     playNewSong();
   });
@@ -150,7 +149,7 @@ function togglePlayBackState() {
   audioElement.addEventListener("timeupdate", () => {
     var totalSong = audioElement.duration;
     var currentTime = audioElement.currentTime;
-    //console.log(currentTime)
+
     var seekToTime = (currentTime * 1000) / totalSong;
     myProgressBar.value = seekToTime;
   });
@@ -190,18 +189,54 @@ function checkRepeatState() {
 // Adding Song Titles & covers in the verticle song list(inside big container) from songs array
 
 songItem.forEach((element, i) => {
-  console.log(element, i);
   element.getElementsByTagName("img")[0].src = songs[i].coverPath;
   element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
 });
-//                          adding duration
-// songItem.forEach((element, i) => {
-//   console.log(element, i);
-//   element.getElementsByClassName("timeStamp")[0].innerText =
-//     songs.filePath[i].duration;
-// });
+// //                          adding duration
+Array.from(document.getElementsByClassName("songItem")).forEach(
+  (element, i) => {
+    const time = new Audio(
+      (element.getElementsByClassName("timeStamp")[0].innerText =
+        songs[i].filePath)
+    );
+    // console.log(time);
+    const duration = time.duration;
+  }
+);
 
-//               ***************Listening to play button in song list*************
+// getAudioArrayDuration(songs[1].filePath){
+//   // takes in an array of audio paths, finds the total audio duration
+//   // in seconds
+
+//   return new Promise((resolve)=>{
+//       var duration = 0;
+
+//       for(const aud_path in aud_path_arr){
+//           var audio = new Audio();
+//           audio.src = aud_path;
+//           audio.onloadedmetadata = ()=>{
+//               console.log(audio.duration);
+//               duration += audio.duration;
+//           }
+//           resolve(duration);
+//       }
+
+//   });
+
+// }
+// songItem.forEach((element, i) => {
+//   let gettingElement = element.getElementsByClassName("timeStamp")[0].innerText;
+//   if (currentPlayingSongIndex <= 0) {
+//     let first = new Audio(songs[0].filePath.duration);
+//     console.log(first);
+//   }
+//   // audioDuration = new Audio(songs[currentPlayingSongIndex].duration);
+//   // console.log(audioDuration);
+// });
+// let duration = songs[1].filePath.duration;
+// console.log(duration);
+
+//               ***************Listening to play buttons in song list*************
 //
 //                                      ***TRY-1***
 
@@ -224,22 +259,29 @@ songItem.forEach((element, i) => {
 //   }
 // );
 
-//                             ***TRY-2***
+//                             ***TRY-2*** progess 5%
 
-songListPlayBtn.forEach((element) => {
-  element.addEventListener("click", () => {
-    console.log(element);
-    const svgIconPlay = (masterPlay2.src = "./Icons/Play.svg");
-    const svgIconPause = (masterPlay2.src = "./Icons/Pause.svg");
-    // console.log(svgIconPause, svgIconPlay);
-    if (element === svgIconPlay) {
-      element.add(svgIconPause);
-    } else if (element === svgIconPause) {
-      element.add(svgIconPlay);
-    }
-  });
-});
-//                              ***TRY-3****
+// Array.from(document.getElementsByClassName("songListPlay")).forEach(
+//   (element) => {
+//     element.addEventListener("click", (e) => {
+//       console.log("click");
+
+//       if (audioElement.paused || audioElement.currentTime <= 0) {
+//         // audioElement.play();
+//         e.target.classList.remove("songListPlayBtn");
+//         e.target.classList.add("pause");
+//         e.target.src = "./Icons/Pause.svg";
+//       } else {
+//         // audioElement.pause();
+//         e.target.classList.remove("pause");
+//         e.target.src = "./Icons/Play.svg";
+//         e.target.classList.add("songListPlayBtn");
+//       }
+//     });
+//   }
+// );
+
+//                         ***TRY-3****
 
 // songListPlayBtn.forEach((element) => {
 //   element.addEventListener("click", (e) => {
@@ -261,23 +303,21 @@ songListPlayBtn.forEach((element) => {
 //                                 ***TRY-4***
 
 // const makeAllPlays = () => {
-//   Array.from(document.getElementsByClassName("songListPlayBtn")).forEach(
-//     (element) => {
-//       // element.classList.remove("pause");
-//       element.target.remove((masterPlay2.src = "./Icons/Pause.svg"));
-//       element.classList.add("songListPlayBtn");
-//     }
-//   );
+//   Array.from(document.getElementsByClassName("songItem")).forEach((element) => {
+//     // element.classList.remove("pause");
+//     element.target.remove((masterPlay2.src = "./Icons/Pause.svg"));
+//     element.classList.add("songListPlayBtn");
+//   });
 // };
 
-// Array.from(document.getElementsByClassName("songListPlayBtn")).forEach(
-//   (element) => {
-//     element.addEventListener("click", (e) => {
-//       makeAllPlays();
-//       // songIndex = parseInt(e.target.id);
-//       e.target.classList.remove("songListPlayBtn");
-//       e.target.classList.add("pause");
-//       e.target.masterPlay2.src = "./Icons/Pause.svg";
-//     });
-//   }
-// );
+// Array.from(document.getElementsByClassName("songItem")).forEach((element) => {
+//   element.addEventListener("click", (e) => {
+//     makeAllPlays();
+//     // songIndex = parseInt(e.target.id);
+//     e.target.classList.remove("songListPlayBtn");
+//     e.target.classList.add("pause");
+//     e.target.masterPlay2.src = "./Icons/Pause.svg";
+//   });
+// });
+
+////
