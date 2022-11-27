@@ -197,10 +197,11 @@ songItem.forEach((element, i) => {
 Array.from(document.getElementsByClassName("songItem")).forEach(
   (element, i) => {
     const time = new Audio(
-      (element.getElementsByClassName("timeStamp")[0].innerText =
+      (
+        //element.getElementsByClassName("timeStamp")[0].innerText =
         songs[i].filePath)
     );
-    // console.log(time);
+     console.log(songs[i].duration);
   }
 );
 
