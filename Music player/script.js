@@ -75,18 +75,19 @@ checkRepeatState(0);
 
 let audioElement = new Audio(songs[currentPlayingSongIndex].filePath);
 
+// console.log(audioElement.duration);
 //On load calculation
 // audioElement.onloadedmetadata = function() {
 //   //alert(audioElement.duration);
 // };
 
 function playNewSong() {
-  console.log("Play new song");
+  // console.log("Play new song");
 
   switch (repeatState) {
     case 0:
-      console.log(songs.length);
-      console.log(currentPlayingSongIndex);
+      // console.log(songs.length);
+      // console.log(currentPlayingSongIndex);
       if (currentPlayingSongIndex == songs.length - 1) {
         currentPlayingSongIndex = 0;
       } else {
@@ -106,7 +107,7 @@ function playNewSong() {
 
   // progress = 0;
   // myProgressBar.value = 0;
-  console.log("here we will handle changing songs");
+  // console.log("here we will handle changing songs");
 }
 
 //Listening progress bar values on seeking song progress
@@ -200,7 +201,6 @@ Array.from(document.getElementsByClassName("songItem")).forEach(
         songs[i].filePath)
     );
     // console.log(time);
-    const duration = time.duration;
   }
 );
 
@@ -321,3 +321,18 @@ Array.from(document.getElementsByClassName("songItem")).forEach(
 // });
 
 ////
+
+//        ***************play next song-***************
+
+let nextSong = document.getElementById("nextBtn");
+nextSong.addEventListener("click", () => {
+  audioElement.pause();
+  if (currentPlayingSongIndex == songs.length - 1) {
+    currentPlayingSongIndex = 0;
+  } else {
+    currentPlayingSongIndex++;
+  }
+  audioElement = new Audio(songs[currentPlayingSongIndex].filePath);
+  audioElement.play();
+  togglePlayBackState();
+});
