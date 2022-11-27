@@ -196,12 +196,20 @@ songItem.forEach((element, i) => {
 // //                          adding duration
 Array.from(document.getElementsByClassName("songItem")).forEach(
   (element, i) => {
-    const time = new Audio(
-      (
-        //element.getElementsByClassName("timeStamp")[0].innerText =
-        songs[i].filePath)
-    );
-     console.log(songs[i].duration);
+    const audio = new Audio(songs[i].filePath);
+    //audio.play()
+    audio.onloadedmetadata = function (){
+      console.log(audio.duration)
+     // var totalDuration = parseInt(audio.duration /60) .toFixed(2)
+     console.log("actualDuration", audio.duration)
+      var totalDuration =  parseInt(audio.duration /60) .toFixed(2)  +   parseInt(audio.duration %60) 
+      element.getElementsByClassName("timeStamp")[0].innerText = totalDuration
+   
+  
+    }
+
+    //element.getElementsByClassName("timeStamp")[0].innerText =
+
   }
 );
 
