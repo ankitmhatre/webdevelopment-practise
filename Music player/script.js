@@ -336,3 +336,23 @@ nextSong.addEventListener("click", () => {
   audioElement.play();
   togglePlayBackState();
 });
+
+//               ************* play previous song****************
+
+let previousSong = document.getElementById("previousBtn");
+
+previousSong.addEventListener("click", () => {
+  audioElement.pause();
+  if (currentPlayingSongIndex == 0) {
+    currentPlayingSongIndex = songs.length;
+  } else {
+    currentPlayingSongIndex--;
+  }
+  audioElement = audioElement = new Audio(
+    songs[currentPlayingSongIndex].filePath
+  );
+  audioElement.play();
+  togglePlayBackState();
+});
+
+console.log(songs.length);
