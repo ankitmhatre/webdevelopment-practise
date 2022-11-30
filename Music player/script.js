@@ -11,7 +11,9 @@ let songTitle = document.getElementById("songTitle");
 let albumArt = document.getElementById("albumArt");
 
 let songItem = Array.from(document.getElementsByClassName("songItem"));
-let songListPlayBtn = document.getElementsByClassName("songListPlayBtn");
+let songListPlayBtn = Array.from(
+  document.getElementsByClassName("songListPlayBtn")
+);
 let masterPlay2 = document.getElementById("masterPlaySongListPLayBtn");
 let previous = document.getElementsByClassName("previous");
 
@@ -27,42 +29,42 @@ let previous = document.getElementsByClassName("previous");
 let songs = [
   {
     songName: "Beetein Lamhein",
-    filePath: "./assets/music/Beetein-Lamhein.mp3",
+    filePath: "./assets/music/0.mp3",
     coverPath: "./assets/cover/1.jpeg",
   },
   {
     songName: "Labon Ko",
-    filePath: "./assets/music/Labon-Ko.mp3",
+    filePath: "./assets/music/1.mp3",
     coverPath: "./assets/cover/2.jpeg",
   },
   {
     songName: "Haan Tu Hai",
-    filePath: "./assets/music/Haan-Tu-Hai.mp3",
+    filePath: "./assets/music/2.mp3",
     coverPath: "./assets/cover/3.jpg",
   },
   {
     songName: "Zara Si",
-    filePath: "./assets/music/Zara-Si.mp3",
+    filePath: "./assets/music/3.mp3",
     coverPath: "./assets/cover/1.jpeg",
   },
   {
     songName: "Ajab Si",
-    filePath: "./assets/music/Ajab-Si.mp3",
+    filePath: "./assets/music/4.mp3",
     coverPath: "./assets/cover/2.jpeg",
   },
   {
     songName: "Dil Ibadat",
-    filePath: "./assets/music/Dil-Ibadat.mp3",
+    filePath: "./assets/music/5.mp3",
     coverPath: "./assets/cover/3.jpg",
   },
   {
     songName: "Kya Muze Pyaar",
-    filePath: "./assets/music/Kya-Muze-Pyaar.mp3",
+    filePath: "./assets/music/6.mp3",
     coverPath: "./assets/cover/1.jpeg",
   },
   {
-    songName: "Guzaarish",
-    filePath: "./assets/music/Guzaarish.mp3",
+    songName: "O Meri Jaan",
+    filePath: "./assets/music/8.mp3",
     coverPath: "./assets/cover/2.jpeg",
   },
 ];
@@ -193,23 +195,22 @@ songItem.forEach((element, i) => {
   element.getElementsByTagName("img")[0].src = songs[i].coverPath;
   element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
 });
-// //                          adding duration
+// //                          *****adding duration******
 Array.from(document.getElementsByClassName("songItem")).forEach(
   (element, i) => {
     const audio = new Audio(songs[i].filePath);
     //audio.play()
-    audio.onloadedmetadata = function (){
-      console.log(audio.duration)
-     // var totalDuration = parseInt(audio.duration /60) .toFixed(2)
-     console.log("actualDuration", audio.duration)
-      var totalDuration =  parseInt(audio.duration /60) .toFixed(2)  +   parseInt(audio.duration %60) 
-      element.getElementsByClassName("timeStamp")[0].innerText = totalDuration
-   
-  
-    }
+    audio.onloadedmetadata = function () {
+      //  console.log(audio.duration);
+      // var totalDuration = parseInt(audio.duration /60) .toFixed(2)
+      // console.log("actualDuration", audio.duration);
+      var totalDuration =
+        parseInt(audio.duration / 60).toFixed(1) +
+        parseInt(audio.duration % 60);
+      element.getElementsByClassName("timeStamp")[0].innerText = totalDuration;
+    };
 
     //element.getElementsByClassName("timeStamp")[0].innerText =
-
   }
 );
 
@@ -270,18 +271,24 @@ Array.from(document.getElementsByClassName("songItem")).forEach(
 
 //                             ***TRY-2*** progess 5%
 
-// Array.from(document.getElementsByClassName("songListPlay")).forEach(
-//   (element) => {
+// Array.from(document.getElementsByClassName("songListPlayBtn")).forEach(
+//   (element, i) => {
 //     element.addEventListener("click", (e) => {
 //       console.log("click");
 
+//       const audio1 = new Audio(songs[3].filePath);
+//       const item1 = (document.getElementsByClassName("SongListPlayBtn")[0] =
+//         audio1);
+
+//       console.log();
 //       if (audioElement.paused || audioElement.currentTime <= 0) {
-//         // audioElement.play();
 //         e.target.classList.remove("songListPlayBtn");
 //         e.target.classList.add("pause");
+//         audio1.play();
+
 //         e.target.src = "./Icons/Pause.svg";
 //       } else {
-//         // audioElement.pause();
+//         audio1.pause();
 //         e.target.classList.remove("pause");
 //         e.target.src = "./Icons/Play.svg";
 //         e.target.classList.add("songListPlayBtn");
@@ -365,3 +372,56 @@ previousSong.addEventListener("click", () => {
 });
 
 console.log(songs.length);
+
+function seekBar() {
+  audioElement.addEventListener("timeupdate", () => {
+    var totalSong = audioElement.duration;
+    var currentTime = audioElement.currentTime;
+
+    var seekToTime = (currentTime * 1000) / totalSong;
+    myProgressBar.value = seekToTime;
+  });
+}
+//            *************** SongListPlayBtn***********
+const makeAllPlay = () => {
+  Array.from(document.getElementsByClassName("songListPlayBtn")).forEach(
+    (element) => {
+      element.classList.remove("pause");
+      element.src = "./Icons/Play.svg";
+      element.classList.add("play");
+    }
+  );
+};
+Array.from(document.getElementsByClassName("songListPlayBtn")).forEach(
+  (element) => {
+    element.addEventListener("click", (e) => {
+      makeAllPlay();
+      currentPlayingSongIndex = parseInt(e.target.id);
+      e.target.classList.remove("play");
+      e.target.src = "./Icons/Pause.svg";
+      audioElement.src = `./assets/music/${currentPlayingSongIndex}.mp3`;
+      audioElement.currentTime = 0;
+      audioElement.play();
+      songTitle.innerText = songs[currentPlayingSongIndex].songName;
+      albumArt.src = songs[currentPlayingSongIndex].coverPath;
+      seekBar();
+      masterPlay.classList.remove("play");
+      masterPlay.classList.add("pause");
+      masterPlay.src = "./Icons/Pause.svg";
+    });
+  }
+);
+
+// if (audioElement.paused || audioElement.currentTime <= 0) {
+//   audioElement.play();
+//   masterPlay.classList.remove("play");
+//   masterPlay.classList.add("pause");
+//   masterPlay.src = "./Icons/Pause.svg";
+//   gif.style.opacity = 1;
+// } else {
+//   audioElement.pause();
+//   masterPlay.classList.remove("pause");
+//   masterPlay.classList.add("play");
+//   masterPlay.src = "./Icons/Play.svg";
+//   gif.style.opacity = 0;
+// }
