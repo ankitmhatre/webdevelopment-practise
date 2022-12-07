@@ -29,3 +29,27 @@ function removeActiveClasses() {
     panel.classList.remove("active");
   });
 }
+//.                     Login Form open and close                                  .
+// document.querySelector("#show-login").addEventListener("click", () => {
+//   document.querySelector("popup").classList.add("active");
+// });
+
+// document
+//   .querySelector(".popup .close-btn")
+//   .addEventListener("click", function () {
+//     document.querySelector("popup").classList.remove("active");
+//   });
+
+// window.addEventListener("load", (event) => {
+//   console.log("hotay");
+//   const opa = new Set(document.querySelector("active"));
+//   opa.style.opacity = "1";
+// });
+document.querySelector("#show-login").addEventListener("click", function () {
+  document.querySelector(".popup").classList.add("active");
+});
+document
+  .querySelector(".popup .close-btn")
+  .addEventListener("click", function () {
+    document.querySelector(".popup").classList.remove("active");
+  });
