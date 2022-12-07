@@ -1,0 +1,92 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+.nav li {
+  margin: 70px;
+  list-style: none;
+  color: black;
+}
+.nav li a {
+  text-decoration: none;
+  color: rgb(77, 92, 110);
+  font-weight: 700;
+}
+
+.landing {
+  height: 100vh;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 65px 0px 0px 50px;
+  font-size: 45px;
+  color: rgb(77, 92, 110);
+}
+
+.bottom {
+  display: flex;
+  /* padding-bottom: 30px; */
+  /* margin-top: 295px; */
+  /* background-color: darkslategrey; */
+  height: 70px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  color: rgb(13, 13, 14);
+  font-weight: bolder;
+  font-size: 15px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.text {
+  width: 100%;
+  padding-left: 50px;
+  justify-content: flex-start;
+  display: flex;
+  /* margin-left: -10px; */
+}
+
+.contactus {
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: center; */
+  width: 100%;
+  padding-right: 50px;
+  padding-top: 5px;
+}
+
+.fb {
+  height: 20px;
+  width: 20px;
+  /* margin: 5px; */
+  padding-left: 20px;
+  display: flex;
+}
+
+.insta {
+  height: 20px;
+  width: 80px;
+}
+
+.tweet {
+  height: 20px;
+  width: 20px;
+}
