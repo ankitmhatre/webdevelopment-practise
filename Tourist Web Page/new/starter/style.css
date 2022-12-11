@@ -25,13 +25,17 @@ body {
 } */
 
 .maintitle {
-  font-size: 30px;
+  font-size: 35px;
+  font-weight: 600;
   /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
   align-items: center;
   justify-content: center;
   padding: 10px 25px;
 }
-
+.mainTitleGoa {
+  text-decoration: none;
+  color: rgb(32, 27, 27);
+}
 .nav-list {
   display: flex;
   list-style: none;
@@ -218,7 +222,7 @@ body {
 .box-sec2 {
   width: 220px;
   height: 350px;
-  background-color: darkslategray;
+  background-color: rgb(190, 197, 197);
   border: 2px solid black;
   border-radius: 30px;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
@@ -325,6 +329,8 @@ body {
   /* border: 2px solid black; */
   /* border-radius: 30px; */
   margin-left: 25px;
+  border: 8px solid whitesmoke;
+  border-radius: 10px;
 }
 
 .img-expand {
@@ -332,6 +338,7 @@ body {
   flex-direction: column;
   background-size: 80vh;
   width: 60%;
+  padding-left: 30px;
 }
 
 .panel {
