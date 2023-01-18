@@ -24,11 +24,11 @@ panels.forEach((panel) => {
   });
 });
 
-function removeActiveClasses() {
-  panels.forEach((panel) => {
-    panel.classList.remove("active");
-  });
-}
+// function removeActiveClasses() {
+//   panels.forEach((panel) => {
+//     panel.classList.remove("active");
+//   });
+// }
 //.                     Login Form open and close                                  .
 // document.querySelector("#show-login").addEventListener("click", () => {
 //   document.querySelector("popup").classList.add("active");
