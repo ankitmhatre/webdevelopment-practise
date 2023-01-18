@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  margin: 10px;
+}
+.row3 {
+  margin-top: 0;
+}
+
+.row {
+  /* justify-content: center; */
+  /* width: 100%; */
+  /* margin: 5rem;
+  margin-left: 5rem; */
+}
+
+.containerAbout {
+  padding: 3rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.featurette {
+  width: 80%;
+}
+
+.containerHome {
+  /* width: 100%; */
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.containerFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.newLine {
+  border: 1px solid black;
+  /* width: 80%; */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.copyright {
+  margin: 10px;
+}
+
+.footerLinks a {
+  margin: 5px;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+.footerBrandText {
+  margin-bottom: 0;
+}
+
+.formContactus {
+  width: 100%;
+  padding: 0rem 4rem;
+  /* align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column; */
+}
+
+.headingContactUs {
+  text-align: center;
+  padding: 1rem;
+}
+
+.btn-contact {
+  margin: 10px 0px;
+}
+
+.form-check {
+  margin: 5px 5px 0px;
+}
+
+.form-group {
+  margin: 10px 0px;
+}
+
+.btn-primary {
+  /* margin: 0px 5px; */
+}
