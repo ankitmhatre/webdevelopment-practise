@@ -313,16 +313,19 @@ label #cancel {
   /* align-items: flex-start; */
   justify-content: flex-start;
   height: 35vh;
+  padding-bottom: 5rem;
   /* background-color: #388242; */
 }
-
+body {
+  /* background-color: #388242; */
+}
 .title-2 {
   font-weight: 900;
   font-size: 2.3rem;
   color: #28292b;
 }
 .universal {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.4;
 }
 .exploreTripBtn {
@@ -344,14 +347,14 @@ label #cancel {
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  width: 15rem;
+  width: 20rem;
 }
 .explore-button a {
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 40px;
   padding-right: 40px;
-  color: #28292b;
+  color: #1f4f65;
   /* width: 5rem; */
   text-decoration: none;
   text-align: center;
@@ -413,6 +416,7 @@ label #cancel {
   font-size: 3.4rem;
   font-weight: 900;
   /* padding-left: 4rem; */
+  color: #28292b;
 }
 
 .box4 {
