@@ -67,12 +67,16 @@ console.log(dots);
 
 ///. carousal section swiper JS
 
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  freeMode: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
+//.optionbar rotating sign
+
+const optionIcon = document.querySelector(".optionNavIcon");
+const optionLia = document.getElementsByClassName(".listitemAnchor");
+
+//  optionLi.forEach((lis) => {
+//   lis.addEventListener("mouseover", () => {
+//     lis.style.color = red;
+//     console.log("working");
+//   });
+// });
+console.log(optionLia);
+console.log(optionIcon);
