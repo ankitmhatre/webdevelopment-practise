@@ -178,3 +178,193 @@ body {
     box-sizing: border-box;
   }
 }
+
+/* ***********************************container 10********************************** */
+/* ***************************************container 10**************************** */
+.container10 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* grid-template-columns: 50% 50%; */
+  /* grid-template-rows: 55%; */
+  position: relative;
+  /* margin-top: 50rem; */
+  background-color: #1f4f65;
+  /* height: 25rem; */
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
+.container10-box1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 1.5;
+  /* height: 18rem; */
+  width: 35%;
+  background-color: #1f4f65;
+  color: #ffffff;
+  /* position: absolute; */
+  margin-right: 2rem;
+  /* margin-left: 2rem; */
+}
+
+.address {
+  font-size: 1.3rem;
+  list-style: none;
+}
+
+strong {
+  font-weight: 800;
+}
+.contact_icon {
+  list-style: none;
+  background-color: #1f4f65;
+  height: 2.3rem;
+  width: 2.3rem;
+  margin: 0.8rem 0.7rem 0.7rem 1rem;
+  border-radius: 10px;
+}
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+.footer-line1 {
+  width: 10%;
+  color: #ffffff;
+  background-color: #1f4f65;
+  /* margin-top: 0.5rem; */
+  /* padding-top: 0.5rem; */
+  /* margin-right: 2rem;
+      margin-left: 2rem; */
+}
+.container10-box2 {
+  background-color: #1f4f65;
+  /* height: 17rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 58%;
+  margin-top: -3rem;
+  /* position: absolute; */
+}
+.footerLists {
+  list-style: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  /* position: absolute; */
+  width: 50%;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  background-color: #1f4f65;
+  /* height: 15rem; */
+  /* padding-top: 4rem; */
+}
+.footerLists ul li a {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  text-decoration: none;
+  color: #ffffff;
+}
+.footerLists ul li {
+  justify-content: center;
+  list-style: none;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+.footerLists ul {
+  list-style: none;
+  text-decoration: none;
+}
+.footerList2 {
+  margin-left: 2rem;
+}
+.footer-btns {
+  background-color: #1f4f65;
+  width: 50%;
+  margin-left: 1rem;
+  /* position: absolute; */
+  /* display: flex; */
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  align-items: center;
+  /* height: 15rem; */
+  position: relative;
+}
+
+.bookHotelBtn {
+  /* padding: 1rem 2.5rem; */
+  /* margin: 6.5rem 0rem 5rem 0rem; */
+  white-space: nowrap;
+  line-height: 1;
+  color: #1f4f65;
+  border-radius: 2px;
+  border: #1f4f65;
+  border-style: solid;
+  background-color: #abd2e3;
+  /* position: absolute; */
+  text-decoration: none;
+  /* margin-bottom: 3rem; */
+  /* width: 6rem; */
+}
+.footer-btns a {
+  width: 15rem;
+  text-align: center;
+  padding: 15px 10px 15px 10px;
+  margin-bottom: 10px;
+}
+.bookCabBtn {
+  /* padding: 1rem 59px; */
+  color: #1f4f65;
+  white-space: nowrap;
+  line-height: 1;
+  border: 2px solid;
+  /* position: absolute; */
+  /* margin-top: 2.5rem; */
+  width: 6rem;
+  text-decoration: none;
+  color: #1f4f65;
+  border-radius: 2px;
+  border: #1f4f65;
+  border-style: solid;
+  background-color: #abd2e3;
+}
+.copyright {
+  background-color: #1f4f65;
+  /* height: 7rem; */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.footers {
+  /* padding-bottom: 2rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  background-color: #1f4f65;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.horizonline {
+  height: 1px;
+  border: 2px solid #ffffff;
+  /* margin: 2rem 3rem 2rem 3rem; */
+  background-color: #ffffff;
+  margin: 0rem 5rem rem 5rem;
+}
