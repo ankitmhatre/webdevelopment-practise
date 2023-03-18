@@ -147,7 +147,7 @@ label #btn {
 }
 label #cancel {
   font-size: 1.5rem;
-  color: #ffff;
+  color: #808080;
   right: 3rem;
   position: absolute;
   align-items: center;
@@ -157,6 +157,7 @@ label #cancel {
 }
 #check {
   display: none;
+  
 }
 .show-login {
   right: 5.5rem;
